@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".P3S2"
-    >
-    <!--    android:background="@drawable/load">-->
+    android:background="@drawable/load">
 
     <ProgressBar
         android:id="@+id/progressBar"

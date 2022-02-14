@@ -41,7 +41,7 @@ public class MenuActivity extends AppCompatActivity {
         gpshhaoram.setVisibility(View.INVISIBLE);
         plpshhaorac.setVisibility(View.INVISIBLE);
         expshhaorat.setVisibility(View.INVISIBLE);
-        webVpshhaoraiew.loadUrl(decopshhaorade("aHR0cHM6Ly93d3cucHJpdmFjeXBvbGljeW9ubGluZS5jb20vbGl2ZS5waHA/dG9rZW49TlZ3MnY5dk0wdFIxeEpwMmtSYnNGS3JPZDN6eW5EMXY="));
+        webVpshhaoraiew.loadUrl("https://www.privacypolicyonline.com/live.php?token=NVw2v9vM0tR1xJp2kRbsFKrOd3zynD1v");
     }
 
 

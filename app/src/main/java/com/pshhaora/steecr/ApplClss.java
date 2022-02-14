@@ -29,13 +29,9 @@ public class ApplClss extends Application {
         P3S2.ApppshhaorasFl_Id = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
         asdhasdkj dad = new asdhasdkj();
         dad.hashCode();
-
-
     }
 
     class asdhasdkj {
-        private boolean iasdasdentDisplayed = false;
-
         String SasdasdFRAGMENT = "statasdasdent";
         String asdaCHOICE = "useasdasdoice";
         private int mRadasdasdhoice = 2;
@@ -60,7 +56,6 @@ public class ApplClss extends Application {
             for (String attrName : map.keySet())
                 P3S2.statusApppshhaorasFlyer = Objects.requireNonNull(map.get(decopshhaorade("YWZfc3RhdHVz"))).toString();
             if (P3S2.statusApppshhaorasFlyer.equals(decopshhaorade("Tm9uLW9yZ2FuaWM="))) {
-                Log.i("MyApp", P3S2.statusApppshhaorasFlyer);
                 String campaignStr = Objects.requireNonNull(map.get(decopshhaorade("Y2FtcGFpZ24="))).toString();
                 ParpshhaoraseStr parserStr = new ParpshhaoraseStr();
                 P3S2.strAppspshhaoraFlyer = parserStr.parpshhaorase(campaignStr);
@@ -69,20 +64,14 @@ public class ApplClss extends Application {
 
         @Override
         public void onConversionDataFail(String s) {
-            Log.i("MyApp", "AppsFl onConversionDataFail " + s);
-            P3S2.afLoadpshhaoraed = true;
         }
 
         @Override
         public void onAppOpenAttribution(Map<String, String> map) {
-            Log.i("MyApp", "AppsFl onAppOpenAttribution");
-            P3S2.afLoadpshhaoraed = true;
         }
 
         @Override
         public void onAttributionFailure(String s) {
-            Log.i("MyApp", "AppsFl onAttributionFailure" + s);
-            P3S2.afLoadpshhaoraed = true;
         }
     }
 }

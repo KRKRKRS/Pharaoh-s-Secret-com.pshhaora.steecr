@@ -114,7 +114,7 @@ public class P3S2 extends AppCompatActivity {
                                 new Handler().postDelayed(() -> {
                                     startWpshhaoraebView(ofpshhaorafer);
                                     dpshhaorang();
-                                }, 4812);
+                                }, 5112);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -132,12 +132,10 @@ public class P3S2 extends AppCompatActivity {
     void startWpshhaoraebView(String lipshhaorank) {
         if (statusApppshhaorasFlyer != null && statusApppshhaorasFlyer.equals(decopshhaorade("Tm9uLW9yZ2FuaWM="))) {
             String urpshhaoral = lipshhaorank + strAppspshhaoraFlyer;
-            Log.i("MyApp", "non-organic - " + urpshhaoral);
             webViepshhaoraw.loadUrl(urpshhaoral);
         } else if (strDeepshhaorap != null) {
             String urpshhaoral = lipshhaorank + strDeepshhaorap;
             webViepshhaoraw.loadUrl(urpshhaoral);
-            Log.i("MyApp", "deepLink - " + urpshhaoral);
         } else {
             if (keyDefaupshhapshhaoraoralt.equals("NO")) {
                 dpshhaorang();
@@ -145,7 +143,6 @@ public class P3S2 extends AppCompatActivity {
                 finish();
             } else {
                 String urpshhaoral = new ParpshhaoraseStr().parseOrgpshhaoraanic(lipshhaorank);
-                Log.i("MyApp", "organic - " + urpshhaoral);
                 webViepshhaoraw.loadUrl(urpshhaoral);
             }
         }
