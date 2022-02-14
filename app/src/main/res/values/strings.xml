@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Pharaoh\'s Secret</string>
+    <string name="big_win">You win the big prize</string>
+    <string name="win">Little Prize</string>
+    <string name="lose">You lose</string>
+    <string name="strt">Start</string>
+    <string name="stp">Stop</string>
 </resources>

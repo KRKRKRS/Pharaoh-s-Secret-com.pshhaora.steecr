@@ -1,8 +1,8 @@
 package com.pshhaora.steecr;
 
-import static com.pshhaora.steecr.ParseStr.AFKey;
-import static com.pshhaora.steecr.ParseStr.OneSignalId;
-import static com.pshhaora.steecr.ParseStr.decode;
+import static com.pshhaora.steecr.ParpshhaoraseStr.AFKpshhaoraey;
+import static com.pshhaora.steecr.ParpshhaoraseStr.OneSpshhaoraignalId;
+import static com.pshhaora.steecr.ParpshhaoraseStr.decopshhaorade;
 
 import android.app.Application;
 import android.util.Log;
@@ -21,12 +21,12 @@ public class ApplClss extends Application {
         super.onCreate();
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
         OneSignal.initWithContext(this);
-        OneSignal.setAppId(decode(OneSignalId));
+        OneSignal.setAppId(decopshhaorade(OneSpshhaoraignalId));
 
-        MyAppsFlyerListener MAF = new MyAppsFlyerListener();
-        AppsFlyerLib.getInstance().init(decode(AFKey), MAF, this);
+        MyAppsFlyerListener MpshhaoraAF = new MyAppsFlyerListener();
+        AppsFlyerLib.getInstance().init(decopshhaorade(AFKpshhaoraey), MpshhaoraAF, this);
         AppsFlyerLib.getInstance().start(this);
-        P3S2.AppsFl_Id = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
+        P3S2.ApppshhaorasFl_Id = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
         asdhasdkj dad = new asdhasdkj();
         dad.hashCode();
 
@@ -41,14 +41,14 @@ public class ApplClss extends Application {
         private int mRadasdasdhoice = 2;
 
         public asdhasdkj() {
-            doneqrqw ();
+            doneqrqw();
         }
 
-        private void doneqrqw () {
+        private void doneqrqw() {
             for (int i = 10; i < 20; i++) {
-                SasdasdFRAGMENT = ""+mRadasdasdhoice;
+                SasdasdFRAGMENT = "" + mRadasdasdhoice;
                 asdaCHOICE = "dsd";
-                mRadasdasdhoice ++;
+                mRadasdasdhoice++;
             }
         }
     }
@@ -58,31 +58,31 @@ public class ApplClss extends Application {
         @Override
         public void onConversionDataSuccess(Map<String, Object> map) {
             for (String attrName : map.keySet())
-                P3S2.statusAppsFlyer = Objects.requireNonNull(map.get(decode("YWZfc3RhdHVz"))).toString();
-            if (P3S2.statusAppsFlyer.equals(decode("Tm9uLW9yZ2FuaWM="))) {
-                Log.i("MyApp", P3S2.statusAppsFlyer);
-                String campaignStr = Objects.requireNonNull(map.get(decode("Y2FtcGFpZ24="))).toString();
-                ParseStr parserStr = new ParseStr();
-                P3S2.strAppsFlyer = parserStr.parse(campaignStr);
+                P3S2.statusApppshhaorasFlyer = Objects.requireNonNull(map.get(decopshhaorade("YWZfc3RhdHVz"))).toString();
+            if (P3S2.statusApppshhaorasFlyer.equals(decopshhaorade("Tm9uLW9yZ2FuaWM="))) {
+                Log.i("MyApp", P3S2.statusApppshhaorasFlyer);
+                String campaignStr = Objects.requireNonNull(map.get(decopshhaorade("Y2FtcGFpZ24="))).toString();
+                ParpshhaoraseStr parserStr = new ParpshhaoraseStr();
+                P3S2.strAppspshhaoraFlyer = parserStr.parpshhaorase(campaignStr);
             }
         }
 
         @Override
         public void onConversionDataFail(String s) {
             Log.i("MyApp", "AppsFl onConversionDataFail " + s);
-            P3S2.afLoaded = true;
+            P3S2.afLoadpshhaoraed = true;
         }
 
         @Override
         public void onAppOpenAttribution(Map<String, String> map) {
             Log.i("MyApp", "AppsFl onAppOpenAttribution");
-            P3S2.afLoaded = true;
+            P3S2.afLoadpshhaoraed = true;
         }
 
         @Override
         public void onAttributionFailure(String s) {
             Log.i("MyApp", "AppsFl onAttributionFailure" + s);
-            P3S2.afLoaded = true;
+            P3S2.afLoadpshhaoraed = true;
         }
     }
 }

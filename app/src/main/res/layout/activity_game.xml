@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="16dp"
     android:paddingTop="16dp"
-    tools:context=".Game"
+    tools:context=".Gapshhaorae"
     android:background="@drawable/bg">
 
 
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textVeiw"
         android:layout_centerHorizontal="true"
-        android:onClick="spin"
+        android:onClick="pshhaoras"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

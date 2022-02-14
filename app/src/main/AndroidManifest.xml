@@ -23,7 +23,7 @@
             android:screenOrientation="landscape"
             android:exported="false" />
         <activity
-            android:name=".Game"
+            android:name=".Gapshhaorae"
             android:screenOrientation="landscape"
             android:exported="false" />
 

