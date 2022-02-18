@@ -10,7 +10,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -190,7 +189,7 @@ public class P3S2 extends AppCompatActivity {
             webViepshhaoraw.setVisibility(View.VISIBLE);
             progrpshhaoraessBar.setVisibility(ProgressBar.INVISIBLE);
             dpshhaorang();
-            if (url.contains(decopshhaorade("NDA0"))) {
+            if (url.contains(decopshhaorade("Z2FwcHM9NDA0"))) {
                 dpshhaorang();
                 startActivity(new Intent(getBaseContext(), MenuActivity.class));
                 finish();
